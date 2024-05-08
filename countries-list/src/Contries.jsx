@@ -33,6 +33,7 @@ function Contries() {
         fetch(API_URL)
         .then(res=>res.json())
         .then(data=>setContries(data))
+        .catch(error=>console.error("error",error))
     },[])
 
     return (
