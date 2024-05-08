@@ -18,7 +18,6 @@ const Card=({name,img,alt})=>{
             <img style={{
                 "width":'150px',
                 "height":"150px",
-                "backgroundColor":"blue",
             }} src={img} alt={alt} />
             <h3>{name}</h3>
         </div>
@@ -45,8 +44,6 @@ function Contries() {
                 )
             })
            }
-            
-           
         </div>
     )
 }
