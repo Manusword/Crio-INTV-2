@@ -1,5 +1,12 @@
 import React, { useRef, useState } from 'react'
 
+const  noTotime= (num)=>{
+  let hours = Math.floor(num / 60);
+  let minute = num % 60;
+  minute = (minute < 10 ? "0" : "") + minute;
+  return hours + ":" + minute;
+}
+
 function Stopwatch() {
   const[time,setTime]= useState(0)
   const[status,setStatus]= useState(true);
@@ -8,7 +15,9 @@ function Stopwatch() {
   const handleStart = ()=>{
     if(status){
       timeInterval.current = setInterval(()=>{
-        setTime(pre=>pre+1)
+        setTime(pre=>{
+          return pre+1;
+        })
       },1000);
       setStatus(false)
     }
@@ -32,7 +41,7 @@ function Stopwatch() {
       "flexDirection":"column"
     }}>
         <h2>Stopwatch</h2>
-        <p>Time: {time}</p>
+        <p>Time: {noTotime(time)}</p>
         <div>
           <button onClick={handleStart}>{status?"Start":"Stop"}</button>
           <button onClick={handleReset}>Reset</button>
