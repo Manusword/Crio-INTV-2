@@ -1,0 +1,21 @@
+.grid-container {
+    display: grid;
+    gap: 10px 10px;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding: 5px;
+  }
+  
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    padding: 15px;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
