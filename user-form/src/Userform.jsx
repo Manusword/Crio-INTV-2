@@ -27,7 +27,7 @@ function Userform() {
             input2.current.focus()
         }
         else{
-            setFullName(data.firstname + " "+data.lastname);
+            setFullName(data.firstname+" "+data.lastname);
         }
     }
     

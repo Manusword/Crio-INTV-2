@@ -2,7 +2,7 @@ import Userform from "./Userform";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Userform />
     </div>
   );
