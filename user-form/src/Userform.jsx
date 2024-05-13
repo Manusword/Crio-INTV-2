@@ -19,10 +19,10 @@ function Userform() {
 
         if (data.firstname.trim() === "") {
             input1.current.focus();
-            return; // Prevent further execution
+            return; 
         } else if (data.lastname.trim() === "") {
             input2.current.focus();
-            return; // Prevent further execution
+            return; 
         }
 
         setFullName(`${data.firstname} ${data.lastname}`);
