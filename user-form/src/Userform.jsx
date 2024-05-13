@@ -16,15 +16,6 @@ function Userform() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        if (data.firstname.trim() === "") {
-            input1.current.focus();
-            return; 
-        } else if (data.lastname.trim() === "") {
-            input2.current.focus();
-            return; 
-        }
-
         setFullName(`${data.firstname} ${data.lastname}`);
     }
 
