@@ -14,7 +14,7 @@ function Userform() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setFullName(`${data.firstname} ${data.lastname}`);
+        setFullName(` ${data.firstname} ${data.lastname}`);
     }
 
     return (
