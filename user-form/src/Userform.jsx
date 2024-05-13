@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 function Userform() {
     const [data, setData] = useState({
@@ -6,9 +6,7 @@ function Userform() {
         lastname: ""
     });
     const [fullname, setFullName] = useState('');
-    const input1 = useRef(null);
-    const input2 = useRef(null);
-
+   
     const handleChange = (e) => {
         const { name, value } = e.target;
         setData(prevData => ({ ...prevData, [name]: value }));
@@ -24,10 +22,10 @@ function Userform() {
             <form onSubmit={handleSubmit}>
                 <h1>Full Name Display</h1>
                 <div>
-                    First Name: <input type="text" name='firstname' value={data.firstname} onChange={handleChange} ref={input1} required />
+                    First Name: <input type="text" name='firstname' value={data.firstname} onChange={handleChange}  required />
                 </div>
                 <div>
-                    Last Name: <input type="text" name="lastname" value={data.lastname} onChange={handleChange} ref={input2} required />
+                    Last Name: <input type="text" name="lastname" value={data.lastname} onChange={handleChange}  required />
                 </div>
                 <button type='submit'>Submit</button>
                 {fullname && <div>Full Name: {fullname}</div>}
