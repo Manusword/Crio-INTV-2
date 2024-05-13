@@ -39,16 +39,10 @@ function Userform() {
                     Last Name: <input type="text" name="lastname" value={data.lastname} onChange={handleChange} ref={input2} required />
                 </div>
                 <button type='submit'>Submit</button>
-                {fullname && <Next/> }
+                {fullname && <p>Full Name: {fullname}</p>}
             </form>
         </div>
     );
-}
-
-const Next =(fullname)=>{
-    return(
-        <p>Full Name: {fullname}</p>
-    )
 }
 
 export default Userform;
