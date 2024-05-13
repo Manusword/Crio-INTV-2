@@ -19,7 +19,7 @@ function Userform() {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <h1>Full Name Display</h1>
                 <div>
                     First Name: <input type="text" name='firstname' value={data.firstname} onChange={handleChange}  required />
@@ -27,7 +27,7 @@ function Userform() {
                 <div>
                     Last Name: <input type="text" name="lastname" value={data.lastname} onChange={handleChange}  required />
                 </div>
-                <button type='submit'>Submit</button>
+                <button onSubmit={handleSubmit} type='submit'>Submit</button>
                 {fullname && <div>Full Name: {fullname}</div>}
             </form>
         </div>
