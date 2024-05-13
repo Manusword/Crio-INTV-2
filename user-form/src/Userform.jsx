@@ -39,7 +39,7 @@ function Userform() {
                     Last Name: <input type="text" name="lastname" value={data.lastname} onChange={handleChange} ref={input2} required />
                 </div>
                 <button type='submit'>Submit</button>
-                {fullname && <p>Full Name: {fullname}</p>}
+                {fullname && <div>Full Name: {fullname}</div>}
             </form>
         </div>
     );
