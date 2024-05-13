@@ -17,7 +17,9 @@ function Userform() {
         })
     }
 
-    const handeleSubmit =(event)=>{
+    const handeleSubmit = (event)=>{
+        event.preventdefault();
+
         if(data.firstname.length === 0){
             input1.current.focus()
         }
