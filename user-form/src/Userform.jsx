@@ -26,8 +26,6 @@ function Userform() {
         }
 
         setFullName(`${data.firstname} ${data.lastname}`);
-        // You can also reset the form data here if needed:
-        // setData({ firstname: "", lastname: "" });
     }
 
     return (
@@ -41,10 +39,16 @@ function Userform() {
                     Last Name: <input type="text" name="lastname" value={data.lastname} onChange={handleChange} ref={input2} required />
                 </div>
                 <button type='submit'>Submit</button>
-                {fullname && <p>Full Name: {fullname}</p>}
+                {fullname && <Next/> }
             </form>
         </div>
     );
+}
+
+const Next =(fullname)=>{
+    return(
+        <p>Full Name: {fullname}</p>
+    )
 }
 
 export default Userform;
