@@ -1,52 +1,48 @@
-import React from 'react'
-import { useRef } from 'react';
-import { useState } from 'react'
+import React, { useRef, useState } from 'react';
 
 function Userform() {
-    const [data, setData]=useState({
-        firstname:"",
-        lastname:""
-    })
-    const [fullname,setFullName] = useState('');
-    const input1 = useRef(null)
-    const input2 = useRef(null)
+    const [data, setData] = useState({
+        firstname: "",
+        lastname: ""
+    });
+    const [fullname, setFullName] = useState('');
+    const input1 = useRef(null);
+    const input2 = useRef(null);
 
-    const handelChange=(e)=>{
-        setData(pre=>{
-            return ({...pre,[e.target.name]:e.target.value})
-        })
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setData(prevData => ({ ...prevData, [name]: value }));
     }
 
-    const handeleSubmit = (event)=>{
+    const handleSubmit = (event) => {
         event.preventDefault();
 
-        if(data.firstname.length === 0){
-            input1.current.focus()
+        if (data.firstname.trim() === "") {
+            input1.current.focus();
+            return; // Prevent further execution
+        } else if (data.lastname.trim() === "") {
+            input2.current.focus();
+            return; // Prevent further execution
         }
-        else if(data.lastname.length === 0){
-            input2.current.focus()
-        }
-        else{
-            setFullName(`${data.firstname} ${data.lastname}`)
-        }
+
+        setFullName(`${data.firstname} ${data.lastname}`);
     }
-    
-    
+
     return (
         <div>
-            <form onSubmit={handeleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <h1>Full Name Display</h1>
                 <div>
-                    First Name: <input type="text" name='firstname' value={data.firstname} onChange={handelChange} ref={input1} required />
+                    First Name: <input type="text" name='firstname' value={data.firstname} onChange={handleChange} ref={input1} required />
                 </div>
                 <div>
-                    Last Name: <input type="text" name="lastname" value={data.lastname} onChange={handelChange} ref={input2} required/>
+                    Last Name: <input type="text" name="lastname" value={data.lastname} onChange={handleChange} ref={input2} required />
                 </div>
-                <button type='submit' >Submit</button>
-                <p>Full Name: {fullname} </p>
+                <button type='submit'>Submit</button>
+                {fullname && <p>Full Name: {fullname}</p>}
             </form>
         </div>
-    )
+    );
 }
 
-export default Userform
+export default Userform;
