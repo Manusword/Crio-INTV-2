@@ -42,7 +42,7 @@ function Userform() {
                 <div>
                     Last Name: <input type="text" name="lastname" value={data.lastname} onChange={handelChange} ref={input2} required/>
                 </div>
-                <button >Submit</button>
+                <button type='submit' >Submit</button>
                 <p>Full Name: {fullname} </p>
             </form>
         </div>
